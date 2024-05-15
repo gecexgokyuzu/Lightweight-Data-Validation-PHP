@@ -41,7 +41,7 @@
  */
 function checkRequiredFields($requiredFields = array(), $data)
 {
-	global $lang;
+	global $lang; //a language file, instead you can just use string values
 	$missingFields = [];
 
 	foreach ($requiredFields as $field) {
@@ -69,7 +69,7 @@ function checkRequiredFields($requiredFields = array(), $data)
 		$json = array();
 		$json['status'] = "error";
 		$json['text'] = $lang['warnings']['FieldsAreRequiredOrInvalid'] . implode(', ', $missingFields);
-		dd($json);
+		dd($json); //dump & die, it is a custom function, you can just throw exception instead
 	}
 }
 
